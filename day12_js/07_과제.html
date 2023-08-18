@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+</head>
+<body>
+    <button type="button" onclick="aa(1)">
+    <img src="/image/math_img_1.jpg" alt="">
+    </button>
+    <button type="button" onclick="aa(2)">
+    <img src="/image/math_img_2.jpg" alt="">
+    </button>
+    <button type="button" onclick="aa(3)">
+    <img src="/image/math_img_3.jpg" alt="">
+
+</button>
+<h3 id="result">
+
+</h3>
+        
+    <script>
+        // 1=가위, 2=바위, 3=보
+        
+        let draw = 0;
+        let win = 0;
+        let lose = 0;
+        function aa(myNum){
+            let aa;
+        let comNum = Math.floor(Math.random()*3)+1;
+            console.log(comNum);
+            if(comNum == myNum){
+                draw++;
+                if(comNum == 1){
+                    comNum="가위";
+                    myNum="가위";
+                }
+                if(comNum == 2){
+                    comNum="바위";
+                    myNum="바위";
+                }
+                if(comNum == 3){
+                    comNum="보";
+                    myNum="보";
+                }
+                aa="비겼습니다"
+            }else if(comNum == 1 && myNum ==2 ){
+                win++; 
+                comNum = "가위";
+                myNum = "바위";
+                aa='이겼습니다';
+            }else if(comNum == 1 && myNum == 3){
+                lose++;
+                comNum = "가위";
+                myNum = "보";
+                aa='졌습니다';
+            }else if(comNum == 2 && myNum ==1){
+                lose++;
+                comNum = "바위";
+                myNum = "가위";
+                aa='졌습니다';
+            }else if(comNum ==2 && myNum ==3){
+                win++;
+                comNum = "바위";
+                myNum = "보";
+                aa='이겼습니다';
+            }else if(comNum ==3 && myNum == 1){
+                win++;
+                comNum = "보";
+                myNum = "가위"
+                aa='이겼습니다';
+            }else if(comNum == 3 && myNum == 2){
+                lose++;
+                comNum = "보";
+                myNum = "바위"
+                aa='졌습니다';
+            }
+            document.getElementById('result').innerText = 
+            `당신: ${myNum} 컴퓨터: ${comNum} 결과:${aa} 현재전적: ${win}
+            무: ${draw} 패: ${lose} 승률:${(win / (10- draw))*100}%`
+        }
+    </script>
+</body>
+</html>

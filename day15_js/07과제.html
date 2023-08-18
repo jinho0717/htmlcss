@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>1~45까지의 중복되지 않는 숫자 6개가 랜덤으로 추출 후 순서대로 출력하기</p>
+    <button type="button" onclick="aa()"></button>
+    <p id="comNum"></p>
+    <button type="button"></button>
+    <p></p>
+    <button type="button"></button>
+
+
+    <script>
+        let com = 0;
+        let me = 0;
+        const cset = new Set();
+        const mset = new Set();
+
+        function aa(){
+            while(cset.size<6){
+                cset.add(com = Math.floor(Math.random()*45)+1);
+            }
+            for(const ee of cset.values()){
+                document.getElementById('comNum').innerHTML += 
+                `<li>${ee}</li>`;
+            };
+            ;
+            while(mset.size<7){
+                mset.add(me = Math.floor(Math.random()*45)+1);
+            }
+        console.log(cset);
+        console.log(mset);
+        }
+    </script>
+</body>
+</html>

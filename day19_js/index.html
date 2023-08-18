@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     h1{
+        width: 200px;
+        height: 70px;
+        border: 5px solid black;
+        text-align: center;
+        font-size: 50px;
+        margin: 30px auto;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+    ul{
+        width: 500px;
+        margin: 30px auto;
+        text-align: center;
+        padding: 0;
+    }
+
+    ul>li{
+        
+        display: inline;
+        margin-right: 30px;
+        
+    }
+    ul>li>a{
+        
+        width: 500px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 30px;
+    }
+    .seoul{
+        width: 700px;
+        margin: 10px auto;
+
+    }
+    div>img{
+        width: 700px;
+        height: auto;
+        margin-top: 30px;
+    }
+    </style>
+</head>
+<body>
+    <h1>관광지</h1>
+    <ul type="none">
+        <li class="seoul">
+            seoul
+        </li>
+        <li class="tokyo">
+                tokyo
+        </li>
+        <li class="paris">
+                paris
+        </li>
+        <li class="roma">
+                roma
+        </li>
+    </ul>
+    <div class="seoull">
+        <img src="/image/스테이크.jpg" alt="Home" id="image">
+    </div>
+    <script>
+        document.addEventListener
+        let img=document.getElementById('image');
+        let itt=document.getElementsByClassName('seoul');
+
+        itt[0].addEventListener('click',()=>{
+            img.src="/image/서울.jpg"
+        });
+        document.getElementsByClassName('tokyo')[0].addEventListener('click',()=>{
+            img.src="/image/도쿄.jpg";
+        });
+
+        document.getElementsByClassName('paris')[0].addEventListener('click',()=>{
+            img.src="/image/파리.jpg";
+        })
+        
+        document.getElementsByClassName('roma')[0].addEventListener('click',()=>{
+            img.src="/image/로마.jpg";
+        });
+    </script>
+</body>
+</html>

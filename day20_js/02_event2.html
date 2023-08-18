@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+      <style>
+        body{
+            background-color: aquamarine;
+        }
+        div{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: tomato;
+        }
+      </style>
+</head>
+<body>
+    <div class="icon">
+        <i class="bi bi-apple"></i>
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', (e)=>{
+            console.log(e);
+            let icon = document.querySelector('.icon');
+            icon.style.left = e.pageX+'px';
+            icon.style.top = e.pageY+'px';
+        })
+    </script>
+</body>
+</html>

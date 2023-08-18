@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        input 파일에 파일명. 확장자 를 입력하여 전송 버튼을 누르면
+        이미지 파일인지 검사하여 
+        이미지 파일이면
+        '정상파일입니다.' <초록색>
+        이미지 파일이 아니면
+        '이미지 파일만 가능합니다' <빨간색>
+        출력하기
+        이미지파일 : jpg, png, jpeg, gif
+        - 대문자로 된 확장자명도 판단 가능해야 함    
+    -->
+
+    <h3>
+        <input type="text" id="result">
+        <button type="button" onclick="aa()">클릭</button>
+    </h3>
+    <h3 id="res">
+
+    </h3>
+    <script>
+        let sum;
+        // let file = ["jpg", "png", "jpeg", "gif"];
+
+
+        function aa(){
+            sum = document.getElementById('result').value;
+            
+                if(sum.match(/(jpg|jpeg|png|gig)/i)){
+                document.getElementById('res').innerHTML =
+                `<li>정상파일입니다</li>`;
+                res.style.setProperty("color","green");
+        }else{
+            document.getElementById('res').innerHTML =
+            `<li>이미지 파일만 가능합니다</li>`
+            res.style.setProperty("color","red");
+        }
+            }
+            
+        
+    </script>
+</body>
+</html>

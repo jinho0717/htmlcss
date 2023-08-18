@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div>li:nth-child(1n){
+            padding: 30px;
+            background-color: green;
+            list-style: none;
+            width: 740px;
+            margin: auto;
+            font-size: 20px;
+        }
+        div>li:nth-child(2n){
+            padding: 30px;
+            background-color: blue;
+            list-style: none;
+            width: 740px;
+            margin: auto;
+            font-size: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        .outer{
+            width: 800px;
+            height: 150px;
+            background-color: aquamarine;
+            text-align: center;
+            line-height: 150px;
+            margin: auto;
+        }
+        .inner{
+            width: 70%;
+            height: 50px;
+            line-height: 150px;
+            border: none;
+            font-size: 30px;
+        }
+        .btn:hover{
+            cursor: pointer;
+        }
+        .btn{ 
+            padding: 20px;
+            line-height: 50%;
+            font-size: 21px;
+            border: none;
+            background-color: gray;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>여행 준비물 점검 목록</h1>
+    <div class="outer">
+        <input type="text" class="inner" id="aa">
+
+        <button type="button" class="btn" id="cl">
+            추가
+        </button>
+    </div>
+    <div id="cc">
+
+    </div>
+
+    <script>
+        document.getElementById('cl').addEventListener('click',()=>{
+            let inp = document.getElementById('aa').value;
+            
+            document.getElementById('cc').innerHTML+= `<li>${inp}</li>`;
+        
+        });
+    </script>
+</body>
+</html>

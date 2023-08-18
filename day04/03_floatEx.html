@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 연습</title>
+    <style>
+        .p-box{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            background-color: aquamarine;
+        }
+        /*
+        calc(식)
+        - 단위가 다른 값들을 계산해야 할 때 사용
+        - 딱 떨어지지않는 값을 줄때
+        - 연산자 앞 뒤로 띄어쓰기 필수~!!
+        */
+        .box{
+            width: calc(100% / 3);
+            height: 500px;
+            float: left;
+
+        }
+        .p-box ::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .box1{
+            background-color: azure;
+        }
+        .box2{
+            background-color: bisque;
+        }
+        .box3{
+            background-color: black;
+        }
+
+        .ppbox{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            }
+
+            
+        .ppbox::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .bbox1{
+            width: calc(100% / 3*1);
+            height: 500px;
+            
+            float: left;
+            background-color: aqua;
+        }    
+        .bbox2{
+            width: calc(100% / 3*2);
+            height: 500px;
+            background-color: blue;
+            float: left;
+        }
+    </style>
+</head>
+    <!-- 
+        부모박스안에 box 3개 넣기 가로로 나열
+        부모박스의 크기 500px*500px
+    -->
+<body>
+    <div class="p-box">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+
+    <div class="ppbox">
+        <div class="bbox bbox1">1</div>
+        <div class="bbox bbox2">2</div>
+        
+    </div>
+</body>
+</html>

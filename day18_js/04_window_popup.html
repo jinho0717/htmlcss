@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업창</title>
+</head>
+<body>
+    <h1>
+        window 메서드 종류 
+    </h1>
+    <ul>
+        <li>
+            열때
+            window.open('url','window name','option(size, scoll...)');
+        </li>
+        <li>
+            window.close() : 닫을 때 
+        </li>
+        <li>
+            alert() : 경고창 띄움. prompt() : input 받을 수 있는창,
+            confirm() : 확인/취소 창
+        </li>
+        
+    </ul>
+
+    <button type="button" onclick="openWindow()">열기</button>
+    <button type="button" onclick="closeWindow()">닫기</button>
+    <button type="button" onclick="alertEX()">alert</button>
+    <button type="button" onclick="confirmEX()">confirm</button>
+    <button type="button" onclick="promptEX()">prompt</button>
+    <h3 id="msg"></h3>
+    <script>
+        let myWindow;
+        function openWindow() {
+                    myWindow = window.open("","myWindow",'width=200,height=300');
+                }
+        function closeWindow() {
+                   if(myWindow){
+                    myWindow.close();
+                   }
+                }
+        function alertEX() {
+                alert("alert 연습");
+        }
+        function confirmEX() {
+                let a = confirm("확인 or 취소");
+                if(a){
+                document.getElementById('msg').innerText = "확인 클릭";
+                }else{
+                document.getElementById('msg').innerText = "취소 클릭";
+                }
+
+        }
+        function promptEX() {
+                let name = prompt('이름을 입력:');
+                document.getElementById('msg').innerText = name;
+                
+        }
+    </script>
+</body>
+</html>

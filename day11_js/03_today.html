@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>오늘은?</h1>
+    <button type="button" onclick="aa()">today</button>
+    <h3 id="qq">
+        <!-- 오늘날짜와 요일을 출력 -->
+        <!-- 2023.07.31.(월) -->
+    </h3>
+    <script>
+        let today = new Date();
+        let time = today.getFullYear();
+        let month = today.getMonth()+1;
+        let day1 = today.getDate();
+        let day = today.getDay();
+        
+        let day2;
+        switch(day){
+            case 0 : day2=`(일)`; break;
+            case 1 : day2=`(월)`; break;
+            case 2 : day2=`(일)`; break;
+            case 3 : day2=`(수)`;break;
+            case 4 : day2=` (목)`; break;
+            case 5 : day2=`(금)`; break;
+            case 6 : day2=`(토)`; break;
+            }
+        console.log(day2);
+
+        function aa(){
+            document.getElementById('qq').innerText = 
+            `${time}. ${month}. ${day1}.${day2}`;
+        }
+    </script>
+</body>
+</html>

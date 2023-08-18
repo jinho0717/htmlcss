@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        
+        div{
+            width: 100%;
+        }
+        .header{
+            height: 80px;
+            background-image: url(/image/만두.jpg);
+        }
+        .main{
+            height: 500px;
+            background-image: url(/image/노트북.jpg);
+        }
+        .subject{
+            height: 250px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            text-transform: none;        
+        }
+        .content{
+            background-image: url(/image/모니터.jpg);
+            height: 300px;
+        }
+        .sub{
+            height: 200px;
+            background-image: url(/image/마우스.jpg);
+        }
+        .footer{
+            height: 200px;
+            background-image: url(/image/치킨.jpg);
+        }
+        @media screen and (min-width:1200px) {
+            .main{
+                width: 50%;
+                height: 700px;
+                float: left;
+                background-size: 100%;
+            }
+            .subject>p{
+                width: 50%;
+                height: 350px;
+                float: right;
+                margin: 0px;
+                padding: 0;
+            }
+            
+            .content{
+                width: 25%;
+                height: 350px;
+                float: left;
+            }
+            .sub{
+                width: 25%;
+                float: right;
+                height: 175px;
+
+            }
+            .footer{
+                width: 25%;
+                height: 175px;
+                float: right;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">aaa</div>
+    <div class="main"></div>
+    <div class="subject">
+        <p>
+            Portfolio
+            Make Hardware Soft
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
+[출처] 반응형 화면 중간 표시 글자 (비공개 카페)
+        </p>
+    </div>
+    <div class="content"></div>
+    <div class="sub"></div>
+    <div class="footer">
+        <a href=""></a>
+    </div>
+</body>
+</html>

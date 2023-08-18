@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 10px auto;
+            border: 1px solid black;
+        }
+        .out{
+            width: 300px;
+            height: 460px;
+        }
+        .t1{
+
+            width: 250px;
+            height: 50px;
+            border: 3px solid black;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        .t2{
+            width: 250px;
+            height: 300px;
+            position: relative;
+            border: 3px solid black;
+        }
+        .t3{
+            width: 250px;
+            height: 50px;
+            border: 3px solid black;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        .zbox1{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 35px;
+            left: 35px;
+            background-color: red;
+            z-index: 30;
+        }
+        .zbox2{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 70px;
+            left: 70px;
+            background-color: green;
+            z-index: 20;
+        }
+        .zbox3{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 105px;
+            left: 105px;
+            background-color: blue;
+            z-index: 10;
+        }
+        .zbox1{
+            box-shadow: 5px 5px 5px white;
+        }
+        .zbox2{
+            box-shadow: 5px 5px 5px white;
+        }
+        .zbox3{
+            box-shadow: 5px 5px 5px white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out">
+        <div class="t1">텍스트</div>
+        <div class="t2">
+            <div class="zbox1"></div>
+            <div class="zbox2"></div>
+            <div class="zbox3"></div>
+        </div>
+        <div class="t3">텍스트</div>
+    </div>
+</body>
+</html>

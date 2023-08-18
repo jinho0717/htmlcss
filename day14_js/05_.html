@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .green{
+            color: green;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h3>
+        <span>파일명 : </span>
+        <input type="text" id="fileName">
+        <button type="button" id="subBtn">전송</button>
+
+    </h3>
+    <h3 id="result"></h3>
+    <script>
+        function imgFileValid(image){
+            //  이미지 파일명 파라미터로 입력받아서 확장자를 체크
+            //  이미지 파일 확장자가 맞다면 true, false 를 리턴
+            let imagefileName = image.toLowerCase(); //소문자로 변환
+            console.log(image);
+            return imagefileName.endsWith('.png') ? true : 
+            imagefileName.endsWith('.jpg') ? true :
+            imagefileName.endsWith('.jpeg') ? true :
+            imagefileName.endsWith('.gif') ? true : false;
+
+        }
+        document.getElementById('subBtn').addEventListener('click',()=>{
+            let fileName = document.getElementById('fileName').value;
+            let imgTrue = `<span class="green"> 정상파일 입니다 </span>`;
+            let imgFalse = `<span class="red"> 이미지 파일만 가능합니다</span>`;
+            document.getElementById('result').innerHTML = 
+            imgFileValid(fileName) ? imgTrue : imgFalse ;
+        })
+    </script>
+</body>
+</html>

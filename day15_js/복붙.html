@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <p>1~45까지의 중복되지 않는 숫자 6개가 랜덤으로 추출 후 순서대로 출력하기</p>
+
+    <button type="button" onclick="computer()">컴퓨터 로또번호</button>
+
+    <p id="comNum"></p>
+
+    <button type="button" id="myRan">내 로또 번호</button>
+
+    <p id="mymy"></p>
+
+    <button type="button" onclick="check()">체크</button>
+
+    <p id="chec"></p>
+
+​
+
+    <script>
+
+        let com = 0;
+
+        let bonus;
+
+        let me = 0;
+
+        const cset = new Set();
+
+        const mset = new Set();
+
+        let cnt = 0;
+
+        function computer(){
+
+            while(cset.size<6){
+
+                cset.add(com = Math.floor(Math.random()*7)+1);
+
+            }
+
+            // do{
+
+            // bonus = Math.floor(Math.random()*45)+1;
+
+            // }while(!cset.has(bonus))
+
+​
+
+            for(const ee of cset.values()){
+
+                document.getElementById('comNum').innerHTML += 
+
+                `${ee} `;
+
+            };
+
+            document.getElementById('comNum').innerHTML += 
+
+            `보너스번호: ${bonus}`
+
+            
+
+        // console.log(cset);
+
+        // console.log(mset);
+
+        }
+
+​
+
+        document.getElementById('myRan').addEventListener('click',()=>{
+
+            while(mset.size<7){
+
+                mset.add(me = Math.floor(Math.random()*45)+1);
+
+            
+
+            }
+
+            for(const mm of mset.values()){
+
+                document.getElementById('mymy'). innerHTML += 
+
+                `${mm} `;
+
+            }
+
+            })    
+
+       
+
+       
+
+       
+
+        let ok = 0;
+
+        function check(){
+
+            for(const ee of cset.values()){
+
+                if(mset.has(ee)==true){
+
+                    cnt++;    
+
+                }
+
+            }
+
+            console.log(cnt);
+
+            switch(cnt){
+
+                case 0 : document.getElementById('chec').innerText = 
+
+                    `꽝`; break;
+
+                case 1 : document.getElementById('chec').innerText = 
+
+                    `꽝`; break;
+
+                case 2 : document.getElementById('chec').innerText = 
+
+                    `꽝`; break;
+
+                case 3 : document.getElementById('chec').innerText = 
+
+                    `5등 5천원`; break;
+
+                case 4 : document.getElementById('chec').innerText = 
+
+                    `4등 5만원`; break;
+
+                case 5 : if(mset.has(bonus)==true){
+
+                        document.getElementById('chec').innerText = 
+
+                    `2등 `; break;
+
+                }
+
+                else{
+
+                    document.getElementById('chec'). innerText = 
+
+                    `3등`; break;
+
+                }
+
+                case 6 : document.getElementById('chec').innerText = 
+
+                    ` 1등 인생역전`; break;
+
+                
+
+            }
+
+        };
+
+​
+
+    </script>
+
+</body>
+
+</html>

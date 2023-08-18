@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn1">li Tag 한번에 추가하기</button>
+    <button type="button" id="btn2">li Tag 하나씩 추가하기</button>
+    <button type="button" id="btn3">li Tag 한번에 추가하기</button>
+    <button type="button" id="btn4">li Tag 하나씩 추가하기</button>
+    <ul id="uu"></ul>
+    <hr>
+    <ol id="oo"></ol>
+    <hr>
+    <ul id="uu1"></ul>
+    <hr>
+    <ol id="oo1"></ol>
+    <hr>
+
+    <script>
+        const p = ['HTML','CSS','javascript','SQL'];
+        let cnt = 0;
+        document.getElementById('btn1').addEventListener('click',()=>{
+            let pp = '';
+            for(let i = 0; i<p.length; i++){
+                pp+=`<li>${p[i]}</li>`;
+            }
+            document.getElementById('uu').innerHTML =pp;
+        });
+
+        document.getElementById('btn2').addEventListener('click',()=>{
+                if(cnt<p.length){
+                document.getElementById('oo').innerHTML +=`<li>${p[cnt]}</li>`;
+                cnt++;
+                }
+        });
+        // appendchild 사용
+        document.getElementById('btn3').addEventListener('click',()=>{
+            let ul = document.getElementById('uu1');
+            p.forEach((elem)=>{
+                let li = document.createElement('li'); //str =`<li></li>`;
+                li.innerText = elem; //str =`<li>${elem}</li>`;
+                ul.appendChild(li); // innerHTML = str;
+            })
+        });
+        let idx = 0;
+        const oo1 = document.getElementById('oo1');
+        document.getElementById('btn4').addEventListener('click',()=>{
+            if(idx < p.length){
+                let li = document.createElement('li');
+                li.innerText = p[idx];
+                oo1.appendChild(li);
+                idx++;
+            }
+        })
+    </script>
+</body>
+</html>

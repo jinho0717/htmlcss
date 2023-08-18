@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이중 for문</title>
+    <style>
+        table{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        구구단 2~9까지 출력하기
+    </h1>
+    <button type="button" onclick="aa()">구구단 출력</button>
+    
+    <h3 id="qq">
+
+    </h3>
+    <h3 id="ee">
+        
+        <button type="button" onclick="bb(3)">3단출력</button>
+    </h3>
+
+    <h3 id="ff">
+        <button type="button" onclick="cc()">버튼</button>
+    </h3>
+
+    <script>
+        function aa(){
+        for(let i =2; i<10; i++){
+            for(let j=1; j<10; j++){
+                document.getElementById('qq').innerHTML+=((i+"*"+j+"="+(i*j))+"<br>");
+                
+            }
+        }document.getElementById('qq').innerHTML+="<br>"
+    }
+        function bb(x){
+            for(let i = 1; i<10; i++){
+                document.getElementById('ee').innerHTML+=("<br>"+(x+"*"+i+"="+(x*i))+"<br>")
+            }
+            document.getElementById('ee').innerHTML+="<br>"
+        }
+
+
+        function cc(){
+            let str=`<table>`;
+                str+=`<tr>`;
+                    for(let i=2; i<10; i++){
+                        document.getElementById('ff').innerHTML+=i+"<br>"
+                        
+                        str+=`<td>`
+                        for(let j = 1; j<10; j++){
+                            document.getElementById('ff').innerHTML+=j
+                        }
+                    }
+                    str+=`</td>` 
+                    
+                    str+=`</tr>`;
+                    str+=`</table>`;
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나이구하기</title>
+    <style>
+        table,tr,td,th{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    이름 : <input type="text" id="name"> <br>
+    주민번호 : <input type="text" id="rNum"><br>
+    <button type="button" onclick="aa()">확인</button>
+
+    <h3>
+        <!-- 이름, 생년월일, 성별, 나이 -->
+        <table>
+            <tr>
+                <th>이름</th>
+                <td id="nameVal"></td>
+            </tr>
+            <tr>
+                <th>생년월일</th>
+                <td id="birth"></td>
+            </tr>
+            <tr>
+                <th>성별</th>
+                <td id="gen"></td>
+            </tr>
+        </table>
+        
+    </h3>
+
+    <script>
+        //오늘 날짜
+        let now = new Date();
+        console.log(now.getFullYear());
+        
+
+        function aa(){
+            let name = document.getElementById('name').value;
+            document.getElementById('nameVal').innerText = name;
+            let year = document.getElementById('rNum').value;
+            let s = year.charAt(year.indexOf("-")+1); //8
+            let g;
+            if((s==1) || (s==3)){
+                g = `남자`;
+            }else if((s==2) || (s==4)){
+                g = `여자`;
+            }    
+            document.getElementById('gen').innerText = g;
+            let qq = document.getElementById('rNum').value;
+            let ff = qq.substring(0,6);
+            document.getElementById('birth').innerText = ff;
+            }
+            //오늘 날짜 변화
+            let today = new Date();
+            console.log(today.getFullYear());//년도
+            console.log(today.getMonth()+1);//월 0~11월+1
+            console.log(today.getDate());//일 반화 1~31
+            console.log(today.getDay())//요일 0(일)~6(토)
+
+            //getHours, minutes, seconds : 시분초 출출
+            let today2 = today.toLocaleDateString();
+            console.log(today2);
+            let time = today.toLocaleTimeString();
+            console.log(time);
+            console.log(today.toLocaleString());
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@900&display=swap" rel="stylesheet">
+    <style>
+
+        section{
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+            font-size: 60px;
+        }
+        h3{
+            text-align: center;
+            font-size: 25px;
+        }
+        div{
+            display: inline-block;
+            margin-left: 150px;
+        }
+        .aa{
+            background-color: beige;
+            font-size: 50px;
+        }
+        .bb{
+            background-color: yellowgreen;
+            font-size: 40px;
+        }
+        .cc{
+            background-color: blue;
+            font-size: 30px;
+        }
+        body{
+            background-color: aquamarine;
+            font-family: 'Handjet', cursive;
+        }
+        div>li{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="head">
+    </header>
+    <section id="sec">
+    </section>
+    <script>
+        fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+        .then(a=>a.json())
+        .then(json =>print(json) )
+        // .catch(err => console(err))
+        function print(obj){
+            console.log(obj);
+            let str ='';
+            str += `<h1>${obj.squadName}</h1>`;
+            str +=`<h3>HomeTown: ${obj.homeTown} // Formed: ${obj.formed}</h3>`;
+            document.getElementById('head').innerHTML = str;
+
+            let dd = '';
+            dd = `<div class='aa' id='dl'></div>`;
+            document.getElementById('sec').innerHTML = dd;
+            
+            let str2 ='';
+            str2 +=`<h2>${obj.members[0].name}</h2>`;
+            str2 +=`<p>SecretIdentity: ${obj.members[0].secretIdentity}</p>`;
+            str2 +=`<p>Age ${obj.members[0].age}</p>`;
+            document.getElementById('dl').innerHTML = str2;
+            str2 +=`<p>Superpowers:<p>`;
+            document.getElementById('dl').innerHTML = str2;
+
+            let str3 = '';
+            str3 +=`<li>${obj.members[0].powers[0]}</li>`;
+            str3 +=`<li>${obj.members[0].powers[1]}</li>`;
+            str3 +=`<li>${obj.members[0].powers[2]}</li>`;
+            document.getElementById('dl').innerHTML += str3;
+
+            let ddd= '';
+            ddd = `<div class='bb' id='dl1'></div>`;
+            document.getElementById('sec').innerHTML += ddd;
+
+            let dstr2 = '';
+            dstr2+=`<h2>${obj.members[1].name}</h2>`;
+            dstr2 +=`<p>SecretIdentity: ${obj.members[1].secretIdentity}</p>`;
+            dstr2 +=`<p>Age ${obj.members[1].age}</p>`;
+            document.getElementById('dl1').innerHTML = dstr2;
+            dstr2 +=`<p>Superpowers:<p>`;
+            document.getElementById('dl1').innerHTML = dstr2;
+
+            let dstr3 = '';
+            dstr3 +=`<li>${obj.members[1].powers[0]}</li>`;
+            dstr3 +=`<li>${obj.members[1].powers[1]}</li>`;
+            dstr3 +=`<li>${obj.members[1].powers[2]}</li>`;
+            document.getElementById('dl1').innerHTML += dstr3;
+
+            let dddd='';
+            dddd= `<div class='cc' id='dl2'></div>`;
+            document.getElementById('sec').innerHTML += dddd;
+
+            let dstr4 = '';
+            dstr4+=`<h2>${obj.members[2].name}</h2>`;
+            dstr4 +=`<p>SecretIdentity: ${obj.members[2].secretIdentity}</p>`;
+            dstr4 +=`<p>Age ${obj.members[2].age}</p>`;
+            document.getElementById('dl2').innerHTML = dstr4;
+            dstr4 +=`<p>Superpowers:<p>`;
+            document.getElementById('dl2').innerHTML = dstr4;
+            
+            let dstr5 = '';
+            dstr5 +=`<li>${obj.members[2].powers[0]}</li>`;
+            dstr5 +=`<li>${obj.members[2].powers[1]}</li>`;
+            dstr5 +=`<li>${obj.members[2].powers[2]}</li>`;
+            dstr5 +=`<li>${obj.members[2].powers[3]}</li>`;
+            dstr5 +=`<li>${obj.members[2].powers[4]}</li>`;
+            document.getElementById('dl2').innerHTML += dstr5;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(/image/room1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+        }
+        body>div{
+            background: radial-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0,0.5));
+            height: 100vh;
+        }
+        p{
+            color: white;
+        }
+        .d{
+            position: absolute;
+            top: 20px;
+            left: 60px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .a{
+            position: absolute;
+            top: 15px;
+            right: 30px;
+        }
+        .a>ul>li{
+            display: inline;
+            font-size: 15px;
+            font-weight: 650;
+            margin-right: 15px;
+            color: white;
+        }
+        .c{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid none;
+            width: 500px;
+            text-align: center;
+            font-size: 50px;            
+        }
+        .c>p{
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 35px;
+        }
+        a{
+            border: 1px solid green;
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+        a:hover{
+            color: cadetblue;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <div class="d">
+        <p>DESIGN</p>
+    </div>
+    <div class="a">
+        <ul>
+            <li>HOME</li>
+            <li>LOING IN</li>
+            <li>SIGN UP</li>
+            <li>BOARD</li>
+        </ul>
+    </div>
+    <div class="c">
+        <p>Welcome to Front-End <br>World!</p>
+        
+        <a href="">Learn More</a>
+    </div>
+</div>  
+</body>
+</html>

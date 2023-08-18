@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+    a:link{
+        color: blue;
+    }
+    a:visited{
+        color: brown;
+    }
+    a:active{
+        color: crimson;
+    }
+
+    div{
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .naver{
+        background-color: chartreuse;
+    }
+
+    ul>li{
+        font-size: 20px;
+        list-style: none;
+        display: inline;
+        margin-right: 20px;
+    }
+    ul>li:nth-child(2n){
+        color: red;
+    }
+    ul>li:nth-child(3n){
+        color: green;
+    }
+    ul>li:first-child, li:last-child{
+        font-weight: 900x;
+    }
+    ul>li:hover{
+    color: blue;
+    }
+    /*
+    ::after : 뒤에붙이는 가상 값
+    ::before : 전에 붙이는 가상 값
+    */
+
+    li::after{
+        content:  " ] ";
+    }
+    li::before{
+        content: "[";
+    }
+    </style>
+   
+</head>
+<body>
+    <div>
+        
+            <a href="https://www.naver.com/" target="_blank" class="naver" >naver
+                
+            </a>
+            <ul>
+                <li>123</li>
+                <li>456</li>
+                <li>789</li>
+                <li>101112</li>
+                <li>131415</li>
+                <li>161718</li>
+                <li>192021</li>
+                <li>222324</li>
+                <li>252627</li>
+                <li>282930</li>
+                <li>313233</li>
+            </ul>
+        
+    </div>
+
+
+    <div >
+        <p> 
+            <a href="https://www.google.com/" target="_blank" >google</a>
+        </p>
+    </div>
+    
+
+    <div>
+        <p>
+            <a href="https://www.daum.net/" target="_blank">daum</a>
+        </p>
+    </div>
+    <!-- div 3개를 만들어
+        naver, google, daum 사이트 연결되게 하고,
+        각 div는 색깔과 모양을 달리 스타일 주기.
+        color : 글자색 
+        background-color : 면색
+        폰트 관련 스타일들
+
+        링크 클릭했는지에 따라서 글꼴 색이 달라지는 가상선택자가 있음.
+        (의사선택자)
+        a:link(방문전)
+        a:visited(링크를 눌러본 후 색)
+        a:active(클릭할때 색)
+    -->
+    <!-- ul -> li태그 10개 생성 
+        전체 글자크기 크게(일정하게...)
+        짝수 : 색 변경 (빨간색)
+        3,6,9 : 초록색
+        1,10 : 굵게
+        : hover
+    -->
+    
+</body>
+</html>
